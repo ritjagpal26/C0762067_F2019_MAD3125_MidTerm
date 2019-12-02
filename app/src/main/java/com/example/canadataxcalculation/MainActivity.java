@@ -10,17 +10,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private EditText etdate;
     private TextView tvdate;
 
@@ -31,9 +34,12 @@ public class MainActivity extends AppCompatActivity {
     EditText GrossIncome;
     EditText rrsp;
     EditText sinNumber;
+    String gender;
+
     RadioButton radioButton;
     RadioGroup rg;
     Integer newyear;
+    Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,16 +57,18 @@ public class MainActivity extends AppCompatActivity {
         GrossIncome = findViewById(R.id.etGrossIncome);
         rrsp = findViewById(R.id.etRrsp);
         sinNumber= findViewById(R.id.etSinNumber);
+
+
 //        male = findViewById(R.id.male);
-        final RadioGroup rg =  findViewById(R.id.radioGroup);
-//        final String value = ((RadioButton)findViewById(rg.getCheckedRadioButtonId())).getText().toString();
-        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                int selectedId = rg.getCheckedRadioButtonId();
-                radioButton = findViewById(selectedId);
-//                Toast.makeText(getBaseContext(), radioButton, Toast.LENGTH_SHORT).show();
-            }
-        });
+//        final RadioGroup rg =  findViewById(R.id.radioGroup);
+////        final String value = ((RadioButton)findViewById(rg.getCheckedRadioButtonId())).getText().toString();
+//        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                int selectedId = rg.getCheckedRadioButtonId();
+//                radioButton = findViewById(selectedId);
+////                Toast.makeText(getBaseContext(), radioButton, Toast.LENGTH_SHORT).show();
+//            }
+//        });
 //        int selectedId = rg.getCheckedRadioButtonId();
 //        radioButton = findViewById(selectedId);
 //        final CRACustomer craCustomer = new CRACustomer();
@@ -74,19 +82,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-//                if (fname.getText().length() == 0 || Lname.getText().length() == 0 || etdate.getText().length() == 0) {
-//                } else {
-//                CRACustomer craCustomer = new CRACustomer(fname.getText().toString(),)
 
                     final CRACustomer craCustomer = new CRACustomer(fname.getText().toString(), Lname.getText().toString(), String.valueOf(newyear),
-                            Integer.valueOf(String.valueOf(sinNumber.getText())), Double.valueOf(String.valueOf(GrossIncome.getText())), Double.valueOf(String.valueOf(rrsp.getText())));
-
-
-//                craCustomer.fNAme = fname.getText().toString();
-//                craCustomer.lName = Lname.getText().toString();
-//                craCustomer.dob = etdate.getText().toString();
-//                craCustomer.grossIncome = Double.valueOf(String.valueOf(GrossIncome.getText()));
-//                craCustomer.rrspCont = Double.valueOf(String.valueOf(rrsp.getText()));
+                            Integer.valueOf(String.valueOf(sinNumber.getText())), Double.valueOf(String.valueOf(GrossIncome.getText())), Double.valueOf(String.valueOf(rrsp.getText())),gender);
 
 
                     Intent myintent = new Intent(MainActivity.this, ShowData.class);
@@ -137,14 +135,27 @@ public class MainActivity extends AppCompatActivity {
             });
 
 
+        spinner = (Spinner) findViewById(R.id.gender_spinner);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.genderarray, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(this);
 
 
 
 
-
-
-
-
+//        gender.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                spinner.performClick();
+//
+//            }
+//        });
 
 
 
@@ -176,7 +187,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(view.getContext(),"new ",Toast.LENGTH_SHORT).show();
 
+        gender = parent.getSelectedItem().toString();
 
+    }
 
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }

@@ -15,6 +15,7 @@ public class ShowData extends AppCompatActivity {
         private TextView  getTotaltaxammount;
     private TextView  getGEnder;
     private TextView totalTax;
+    private TextView rrsp;
 
 //    CRACustomer craCustomer = getIntent().getParcelableExtra("custobject");
 
@@ -35,7 +36,7 @@ public class ShowData extends AppCompatActivity {
         getGEnder = findViewById(R.id.getGender);
         totalTax = findViewById(R.id.taxammount);
 
-
+        rrsp = findViewById(R.id.rrspget);
 
 
         getFullname.setText(craCustomer.fullName());
@@ -45,8 +46,9 @@ public class ShowData extends AppCompatActivity {
         getDob.setText(String.valueOf((craCustomer.calculateAge())));
         getSinNumber.setText(String.valueOf(craCustomer.sinNumber));
         getTotaltaxammount.setText(String.valueOf(craCustomer.total_taxable_amount));
-        getGEnder.setText(craCustomer.getGender());
+        getGEnder.setText(craCustomer.gender);
         totalTax.setText(String.valueOf(craCustomer.totaltaxammount));
+        rrsp.setText(String.valueOf(craCustomer.rrspAmount(craCustomer.grossIncome)));
 
 
 

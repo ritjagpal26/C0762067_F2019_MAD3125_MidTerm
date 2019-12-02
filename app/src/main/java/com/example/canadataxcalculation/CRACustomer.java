@@ -11,7 +11,7 @@ public class CRACustomer implements Parcelable {
     public int sinNumber;
     public double grossIncome;
     public double rrspCont;
-    private  String gender;
+    public   String gender;
 
 
 
@@ -24,14 +24,14 @@ public class CRACustomer implements Parcelable {
 
 
 
-    public CRACustomer(String fNAme, String lName, String dob, int sinNumber, double grossIncome, double rrspCont) {
+    public CRACustomer(String fNAme, String lName, String dob, int sinNumber,double grossIncome, double rrspCont,String gender) {
         this.fNAme = fNAme;
         this.lName = lName;
         this.dob = dob;
         this.sinNumber = sinNumber;
         this.grossIncome = grossIncome;
         this.rrspCont = rrspCont;
-//        this.gender = gender;
+        this.gender = gender;
 //        this.total_taxable_amount = total_taxable_amount;
     }
       public String getGender() {
@@ -135,6 +135,8 @@ public class CRACustomer implements Parcelable {
 
 
     public float cppAmount() {
+
+        System.out.println(gender);
         System.out.println("Print rrsp"+rrspCont);
         double cpp_max = 57400.00;
         double cpp_contribution_rate = 5.10;
@@ -160,7 +162,7 @@ public class CRACustomer implements Parcelable {
     }
 
 
-                public float EI() {
+                public float EI(Double grossIncome) {
                 double eIContribution = 0.00;
                 System.out.println("in loop gi" + grossIncome);
                 if (grossIncome >= 53100){
@@ -183,7 +185,7 @@ public class CRACustomer implements Parcelable {
             }
 
 
-    public float rrspAmount() {
+    public float rrspAmount(Double grossIncome) {
         double rrsp_max;
 
         rrsp_max = (grossIncome * .18);
