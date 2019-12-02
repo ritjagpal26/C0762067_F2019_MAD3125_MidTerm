@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:hapticFeedbackEnabled="true"
+    tools:context=".ShowData">
+
+    <TextView
+        android:id="@+id/getNAme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.715"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/getFedralTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/totaltaxable"
+        app:layout_constraintStart_toStartOf="@+id/totaltaxable"
+        app:layout_constraintTop_toBottomOf="@+id/totaltaxable" />
+
+    <TextView
+        android:id="@+id/getCpp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/getSinnumber"
+        app:layout_constraintStart_toStartOf="@+id/getSinnumber"
+        app:layout_constraintTop_toBottomOf="@+id/getSinnumber" />
+
+    <TextView
+        android:id="@+id/getAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/getNAme"
+        app:layout_constraintStart_toStartOf="@+id/getNAme"
+        app:layout_constraintTop_toBottomOf="@+id/getNAme" />
+
+    <TextView
+        android:id="@+id/getGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/getAge"
+        app:layout_constraintStart_toStartOf="@+id/getAge"
+        app:layout_constraintTop_toBottomOf="@+id/getAge" />
+
+    <TextView
+        android:id="@+id/getSinnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/getGender"
+        app:layout_constraintStart_toStartOf="@+id/getGender"
+        app:layout_constraintTop_toBottomOf="@+id/getGender" />
+
+    <TextView
+        android:id="@+id/getPt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/getFedralTax"
+        app:layout_constraintStart_toStartOf="@+id/getFedralTax"
+        app:layout_constraintTop_toBottomOf="@+id/getFedralTax" />
+
+    <TextView
+        android:id="@+id/totaltaxable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/getCpp"
+        app:layout_constraintStart_toStartOf="@+id/getCpp"
+        app:layout_constraintTop_toBottomOf="@+id/getCpp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="@+id/getNAme"
+        app:layout_constraintEnd_toStartOf="@+id/getNAme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/getNAme" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        app:layout_constraintBottom_toBottomOf="@+id/getAge"
+        app:layout_constraintEnd_toEndOf="@+id/textView14"
+        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toTopOf="@+id/getAge" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Gender"
+        app:layout_constraintBottom_toBottomOf="@+id/getGender"
+        app:layout_constraintEnd_toStartOf="@+id/getGender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Sin number"
+        app:layout_constraintBottom_toBottomOf="@+id/getSinnumber"
+        app:layout_constraintEnd_toStartOf="@+id/getSinnumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Cpp"
+        app:layout_constraintBottom_toBottomOf="@+id/getCpp"
+        app:layout_constraintEnd_toStartOf="@+id/getCpp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Total taxable ammount"
+        app:layout_constraintBottom_toBottomOf="@+id/totaltaxable"
+        app:layout_constraintEnd_toStartOf="@+id/totaltaxable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Fedral tax"
+        app:layout_constraintBottom_toBottomOf="@+id/getFedralTax"
+        app:layout_constraintEnd_toStartOf="@+id/getFedralTax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Provincial Tax"
+        app:layout_constraintBottom_toBottomOf="@+id/getPt"
+        app:layout_constraintEnd_toStartOf="@+id/getPt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="170dp"
+        android:layout_height="47dp"
+        android:text="Details"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="72dp" />
+
+    <TextView
+        android:id="@+id/taxammount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/getPt"
+        app:layout_constraintStart_toStartOf="@+id/getPt"
+        app:layout_constraintTop_toBottomOf="@+id/getPt" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Tax "
+        app:layout_constraintBottom_toBottomOf="@+id/taxammount"
+        app:layout_constraintEnd_toStartOf="@+id/taxammount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/taxammount" />
+</androidx.constraintlayout.widget.ConstraintLayout>
